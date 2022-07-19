@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Button from "./components/Button.js";
+
+import Navbar from "./components/Navbar.js";
+import MyTextComponent from "./components/MyTextComponent";
 
 function App() {
+  const handleClick = (message) => console.log(message);
+
+  //it's JSX, not HTML
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>hello</h1>
+
+      <Navbar />
+      <MyTextComponent />
+      <Button
+        text="Amazing button"
+        mySecondProps="hello!!"
+        myFunction={handleClick}
+      />
+      <Button text="Very bad button" />
+      <Button text="Button that works" />
     </div>
   );
 }
